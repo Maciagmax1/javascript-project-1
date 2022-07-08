@@ -1,0 +1,45 @@
+body {
+  background-color: black;
+  background-image: url("1 - Images/vn-background.png");
+  background-repeat: none;
+  background-size: 100%;
+  margin: 0px;
+}
+
+header {
+  background-color: rgb(210, 63, 205);
+  border: 5px solid white;
+  padding-left: 20px;
+  width: 100vh;
+  height: 200px;
+}
+
+.concept-container {
+  color: white;
+  padding: 20px;
+  font-family: "Rock Salt", cursive;
+}
+
+.movieh1,
+.snacksh1 {
+  background-color: rgb(210, 63, 205);
+  border: 5px solid white;
+  padding-left: 20px;
+  width: 100vh;
+  font-family: "Rock Salt", cursive;
+}
+h1 {
+  color: white;
+  font-size: 30px;
+  text-shadow: 3px 3px 1px rgb(66, 163, 211);
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+div.movie {
+  width: 50vh;
+  background-color: white;
+}

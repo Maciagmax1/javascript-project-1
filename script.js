@@ -1,5 +1,7 @@
 const cart = [];
 
+const movieContainer = document.querySelector(".movie-container");
+
 const movieArray = [
   //   {
   //     title: "Die Hard",
@@ -155,6 +157,34 @@ const addMovie = (array, title, year, price, genre) => {
   return array.push(newMovie);
 };
 
+console.log(movieArray);
+
+movieArray.forEach((item) => {
+  const newMovie = document.createElement("div");
+  newMovie.classList.add("movie");
+  const newMovieTitle = document.createElement("p");
+  newMovieTitle.classList.add("title");
+  const newMovieYear = document.createElement("p");
+  newMovieYear.classList.add("year");
+  const newMoviePrice = document.createElement("p");
+  newMoviePrice.classList.add("movie-price");
+  const newMovieGenre = document.createElement("p");
+  newMovieGenre.classList.add("genre");
+  const newMovieDescription = document.createElement("p");
+  newMovieDescription.classList.add("movie-description");
+  const newMovieButton = document.createElement("button");
+  newMovieButton.classList.add("movie-button");
+  newMovie.append(
+    newMovieTitle,
+    newMovieYear,
+    newMoviePrice,
+    newMovieGenre,
+    newMovieDescription,
+    newMovieButton
+  );
+  movieContainer.append(newMovie);
+});
+
 const snackArray = [
   {
     brand: "Gushers",
@@ -232,6 +262,8 @@ const addSnack = (array, brand, price, calories, description) => {
 //
 //Give the subtotal, sales tax, and the total.
 //add to HTML (<p class="subTotal"></p>), creat a class for each, then document.querySelector(".salesText").textContent = calculations.salesText
+
+// Cart Modal Appears
 const calculateCartCosts = (itemsArray, taxPercentage) => {
   let subtotal = 0;
   let salesTax = 0;

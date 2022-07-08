@@ -1,123 +1,147 @@
+const cart = [];
+
 const movieArray = [
-  {
-    title: "Die Hard",
-    year: 1988,
-    price: 6.5,
-    genre: "Action",
-  },
-  {
-    title: "Matrix",
-    year: 1999,
-    price: 7.0,
-    genre: "Action",
-  },
-  {
-    title: "GhostBusters",
-    year: 1984,
-    price: 6.5,
-    genre: "Comedy",
-  },
-  {
-    title: "Monty Python and the Holy Grail",
-    year: 1975,
-    price: 6.0,
-    genre: "Comedy",
-  },
-  {
-    title: "Robocop",
-    year: 1987,
-    price: 6.5,
-    genre: "Action",
-  },
-  {
-    title: "Back to the Future",
-    year: 1985,
-    price: 6.5,
-    genre: "Comedy",
-  },
-  {
-    title: "Total Recall",
-    year: 1990,
-    price: 7.0,
-    genre: "Sci-fi",
-  },
-  {
-    title: "Plain Trains and Automobile",
-    year: 1987,
-    price: 6.5,
-    genre: "Comedy",
-  },
-  {
-    title: "First Blood",
-    year: 1982,
-    price: 6.5,
-    genre: "Drama",
-  },
+  //   {
+  //     title: "Die Hard",
+  //     year: 1988,
+  //     price: 6.5,
+  //     genre: "Action",
+  //   },
+  //   {
+  //     title: "Matrix",
+  //     year: 1999,
+  //     price: 7.0,
+  //     genre: "Action",
+  //   },
+  //   {
+  //     title: "GhostBusters",
+  //     year: 1984,
+  //     price: 6.5,
+  //     genre: "Comedy",
+  //   },
+  //   {
+  //     title: "Monty Python and the Holy Grail",
+  //     year: 1975,
+  //     price: 6.0,
+  //     genre: "Comedy",
+  //   },
+  //   {
+  //     title: "Robocop",
+  //     year: 1987,
+  //     price: 6.5,
+  //     genre: "Action",
+  //   },
+  //   {
+  //     title: "Back to the Future",
+  //     year: 1985,
+  //     price: 6.5,
+  //     genre: "Comedy",
+  //   },
+  //   {
+  //     title: "Total Recall",
+  //     year: 1990,
+  //     price: 7.0,
+  //     genre: "Sci-fi",
+  //   },
+  //   {
+  //     title: "Plain Trains and Automobile",
+  //     year: 1987,
+  //     price: 6.5,
+  //     genre: "Comedy",
+  //   },
+  //   {
+  //     title: "First Blood",
+  //     year: 1982,
+  //     price: 6.5,
+  //     genre: "Drama",
+  //   },
+
+  //   {
+  //     title: "Independence Day",
+  //     year: 1996,
+  //     price: 7.0,
+  //     genre: "Sci-fi",
+  //     description:
+  //   },
   {
     title: "The Breakfast Club",
     year: 1985,
     price: 6.5,
     genre: "Comedy",
-  },
-  {
-    title: "Independence Day",
-    year: 1996,
-    price: 7.0,
-    genre: "Sci-fi",
+    description:
+      "Five disparate high school students meet in Saturday detention, and discover they have a lot more in common than they thought.",
   },
   {
     title: "American Psycho",
     year: 2000,
     price: 7.5,
     genre: "Horror",
+    description:
+      "A wealthy New York City investment banking executive, Patrick Bateman, hides his alternate psychopathic ego from his co-workers and friends as he delves deeper into his violent, hedonistic fantasies.",
   },
   {
     title: "Gladiator",
     year: 2000,
     price: 7.5,
     genre: "Drama",
+    description:
+      "Renamed Spaniard and forced to become a gladiator, Maximus must battle to the death with other men for the amusement of paying audiences.",
   },
   {
     title: "Se7en",
     year: 1995,
     price: 7.0,
     genre: "Horror",
+    description:
+      "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives.",
   },
   {
     title: "Alien",
     year: 1979,
     price: 6.0,
     genre: "Sci-fi",
+    description:
+      "An isolated crew on a remote spaceship is unaware of the impending nightmare set to descend upon them when the alien parasite planted inside its unfortunate host is birthed.",
   },
   {
     title: "Dirty Dancing",
     year: 1987,
     price: 6.5,
     genre: "Romance",
+    description:
+      "Expecting the usual tedium that accompanies a summer in the Catskills with her family, 17-year-old Frances 'Baby' Houseman is surprised to find herself stepping into the shoes of a professional hoofer—and unexpectedly falling in love.",
   },
   {
     title: "Grease",
     year: 1979,
     price: 6.0,
     genre: "Romance",
+    description:
+      "Australian good girl Sandy and greaser Danny fell in love over the summer. But when they unexpectedly discover they're now in the same high school, will they be able to rekindle their romance despite their eccentric friends?",
   },
   {
     title: "Jurrassic Park",
     year: 1993,
     price: 7.0,
     genre: "Sci-fi",
+    description:
+      "A wealthy entrepreneur secretly creates a theme park featuring living dinosaurs drawn from prehistoric DNA. However, the park is anything but amusing as the security systems go off-line and the dinosaurs escape.",
   },
   {
     title: "Clueless",
     year: 1995,
     price: 6.0,
     genre: "Comedy",
+    description:
+      "Shallow, rich and socially successful Cher is at the top of her Beverly Hills high school's pecking scale.  Cher realizes that her disapproving ex-stepbrother was right about how misguided she was - and falls for him.",
   },
   {
     title: "Unbreakable",
     year: 2000,
     price: 6.0,
     genre: "Thriller",
+    description:
+      "A man learns something extraordinary about himself after a devastating accident.",
   },
 ];
 const addMovie = (array, title, year, price, genre) => {
@@ -126,8 +150,98 @@ const addMovie = (array, title, year, price, genre) => {
     year,
     price,
     genre,
+    description,
   };
   return array.push(newMovie);
 };
 
-const snackArray = [];
+const snackArray = [
+  {
+    brand: "Gushers",
+    price: 2.75,
+    calories: 240,
+    description:
+      "Fruits? Nah, spoil yourself with some Gushers, and let the taste of fruit explode in your mouth!",
+  },
+  {
+    brand: "Warheads Sour Candy",
+    price: 1.5,
+    calories: 50,
+    description:
+      "Best paired with our comedies, Warheads will bring the joy and delight to your laughter-filled movie experience.  ",
+  },
+  {
+    brand: "Big League Chew",
+    price: 1.75,
+    calories: 50,
+    description:
+      "Enjoy the 1980s with the classic, flavorful bubble gum bursting with an array of flavors.",
+  },
+  {
+    brand: "FunDip",
+    price: 2.0,
+    calories: 92,
+    description: "The most complicated way to ingest sugar imaginable.",
+  },
+  {
+    brand: "Gobstoppers",
+    price: 2.25,
+    calories: 120,
+    description: "A rainbow of flavor that lasts forever and ever.",
+  },
+];
+//   {
+//     brand: "Kettlecorn",
+//     price: 2.25,
+//     calories:
+//   },
+//   {
+//     brand: "Voodoo Chips",
+//     price: 2.25,
+//     calories:
+//   },
+//   {
+//     brand: "Funyons",
+//     price: 2.25,
+//     calories:
+//   },
+//   {
+//     brand: "Kit-Kat",
+//     price: 2.25,
+//     calories:
+//   },
+//   {
+//     brand: "Doritos",
+//     price: 2.25,
+//     calories:
+//   },
+// ];
+
+const addSnack = (array, brand, price, calories, description) => {
+  const newSnack = {
+    brand,
+    price,
+    calories,
+    description,
+  };
+  return array.push(newSnack);
+};
+
+// Able to calculate subtotal, sales tax, and total
+// Function takes an array of snack/movies objects and tax percentage of 0.06, or whatever we choose.
+//
+//Give the subtotal, sales tax, and the total.
+//add to HTML (<p class="subTotal"></p>), creat a class for each, then document.querySelector(".salesText").textContent = calculations.salesText
+const calculateCartCosts = (itemsArray, taxPercentage) => {
+  let subtotal = 0;
+  let salesTax = 0;
+  let total = 0;
+  for (const item of itemsArray) {
+    subtotal += item.price;
+  }
+  salesTax = Math.round(subtotal * taxPercentage * 100) / 100;
+  total = subtotal + salesTax;
+  return { subtotal: subtotal, salesTax: salesTax, total: total };
+};
+const calculations = calculateCartCosts(snackArray, 0.06);
+console.log(calculations.subtotal);

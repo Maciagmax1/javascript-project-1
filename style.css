@@ -1,6 +1,6 @@
 body {
   background-color: black;
-  background-image: url("1 - Images/vn-background.png");
+  background-image: url("assets/vn-background.png");
   background-repeat: none;
   background-size: 100%;
   margin: 0px;
@@ -12,6 +12,7 @@ header {
   padding-left: 20px;
   width: 100vh;
   height: 200px;
+  /* position: fixed; */
 }
 
 .concept-container {
@@ -39,7 +40,19 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
 }
-div.movie {
+
+.movie {
   width: 50vh;
   background-color: white;
+}
+
+.snack {
+  width: 50vh;
+  background-color: white;
+}
+
+.snack-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

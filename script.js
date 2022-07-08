@@ -81,7 +81,7 @@ const movieArray = [
     year: 2000,
     price: 7.5,
     genre: "Horror",
-    image: "assets/breakfastclub.png",
+    image: "assets/americanpsycho.png",
     description:
       "A wealthy New York City investment banking executive, Patrick Bateman, hides his alternate psychopathic ego from his co-workers and friends as he delves deeper into his violent, hedonistic fantasies.",
   },
@@ -90,7 +90,7 @@ const movieArray = [
     year: 2000,
     price: 7.5,
     genre: "Drama",
-    image: "assets/breakfastclub.png",
+    image: "assets/gladiator.png",
     description:
       "Renamed Spaniard and forced to become a gladiator, Maximus must battle to the death with other men for the amusement of paying audiences.",
   },
@@ -99,7 +99,7 @@ const movieArray = [
     year: 1995,
     price: 7.0,
     genre: "Horror",
-    image: "assets/breakfastclub.png",
+    image: "assets/se7en.png",
     description:
       "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives.",
   },
@@ -108,7 +108,7 @@ const movieArray = [
     year: 1979,
     price: 6.0,
     genre: "Sci-fi",
-    image: "assets/breakfastclub.png",
+    image: "assets/alien.png",
     description:
       "An isolated crew on a remote spaceship is unaware of the impending nightmare set to descend upon them when the alien parasite planted inside its unfortunate host is birthed.",
   },
@@ -117,7 +117,7 @@ const movieArray = [
     year: 1987,
     price: 6.5,
     genre: "Romance",
-    image: "assets/breakfastclub.png",
+    image: "assets/dirty-dancing.png",
     description:
       "Expecting the usual tedium that accompanies a summer in the Catskills with her family, 17-year-old Frances 'Baby' Houseman is surprised to find herself stepping into the shoes of a professional hoofer—and unexpectedly falling in love.",
   },
@@ -126,7 +126,7 @@ const movieArray = [
     year: 1979,
     price: 6.0,
     genre: "Romance",
-    image: "assets/breakfastclub.png",
+    image: "assets/grease.png",
     description:
       "Australian good girl Sandy and greaser Danny fell in love over the summer. But when they unexpectedly discover they're now in the same high school, will they be able to rekindle their romance despite their eccentric friends?",
   },
@@ -135,7 +135,7 @@ const movieArray = [
     year: 1993,
     price: 7.0,
     genre: "Sci-fi",
-    image: "assets/breakfastclub.png",
+    image: "assets/jurassicpark.png",
     description:
       "A wealthy entrepreneur secretly creates a theme park featuring living dinosaurs drawn from prehistoric DNA. However, the park is anything but amusing as the security systems go off-line and the dinosaurs escape.",
   },
@@ -144,7 +144,7 @@ const movieArray = [
     year: 1995,
     price: 6.0,
     genre: "Comedy",
-    image: "assets/breakfastclub.png",
+    image: "assets/clueless.png",
     description:
       "Shallow, rich and socially successful Cher is at the top of her Beverly Hills high school's pecking scale.  Cher realizes that her disapproving ex-stepbrother was right about how misguided she was - and falls for him.",
   },
@@ -153,7 +153,7 @@ const movieArray = [
     year: 2000,
     price: 6.0,
     genre: "Thriller",
-    image: "assets/breakfastclub.png",
+    image: "assets/unbreakable.png",
     description:
       "A man learns something extraordinary about himself after a devastating accident.",
   },
@@ -182,15 +182,15 @@ movieArray.forEach((item) => {
   newMovieYear.textContent = item.year;
   const newMoviePrice = document.createElement("p");
   newMoviePrice.classList.add("movie-price");
-  newMoviePrice.textContent = item.price;
+  newMoviePrice.textContent = `$${item.price}`;
   const newMovieGenre = document.createElement("p");
   newMovieGenre.classList.add("genre");
   newMovieGenre.textContent = item.genre;
   const newMovieDescription = document.createElement("p");
   newMovieDescription.classList.add("movie-description");
   newMovieDescription.textContent = item.description;
-  // const newMovieImage = document.createElement("img");
-  // newMovieImage.src = movieArray[item].image;
+  const newMovieImage = document.createElement("img");
+  newMovieImage.src = item.image;
   const newMovieButton = document.createElement("button");
   newMovieButton.classList.add("movie-button");
   newMovie.append(
@@ -210,6 +210,7 @@ const snackArray = [
     brand: "Gushers",
     price: 2.75,
     calories: 240,
+    image: "assets/gushers.png",
     description:
       "Fruits? Nah, spoil yourself with some Gushers, and let the taste of fruit explode in your mouth!",
   },
@@ -217,6 +218,7 @@ const snackArray = [
     brand: "Warheads Sour Candy",
     price: 1.5,
     calories: 50,
+    image: "assets/warheads.png",
     description:
       "Best paired with our comedies, Warheads will bring the joy and delight to your laughter-filled movie experience.  ",
   },
@@ -224,6 +226,7 @@ const snackArray = [
     brand: "Big League Chew",
     price: 1.75,
     calories: 50,
+    image: "assets/bigleague.png",
     description:
       "Enjoy the 1980s with the classic, flavorful bubble gum bursting with an array of flavors.",
   },
@@ -231,12 +234,14 @@ const snackArray = [
     brand: "FunDip",
     price: 2.0,
     calories: 92,
+    image: "assets/fundip.png",
     description: "The most complicated way to ingest sugar imaginable.",
   },
   {
     brand: "Gobstoppers",
     price: 2.25,
     calories: 120,
+    image: "assets/gobstopper.png",
     description: "A rainbow of flavor that lasts forever and ever.",
   },
 ];
@@ -275,7 +280,7 @@ snackArray.forEach((item) => {
   newSnackBrand.textContent = item.brand;
   const newSnackPrice = document.createElement("p");
   newSnackPrice.classList.add("snack-price");
-  newSnackPrice.textContent = item.price;
+  newSnackPrice.textContent = `$${item.price}`;
   const newSnackCalories = document.createElement("p");
   newSnackCalories.classList.add("calories");
   newSnackCalories.textContent = item.calories;
@@ -283,7 +288,7 @@ snackArray.forEach((item) => {
   newSnackDescription.classList.add("snack-description");
   newSnackDescription.textContent = item.description;
   const newSnackImage = document.createElement("img");
-  newSnackImage.src = snackArray[item].images;
+  newSnackImage.src = item.image;
   const newSnackButton = document.createElement("button");
   newSnackButton.classList.add("snack-button");
   newSnack.append(
@@ -291,6 +296,7 @@ snackArray.forEach((item) => {
     newSnackPrice,
     newSnackCalories,
     newSnackDescription,
+    newSnackImage,
     newSnackButton
   );
   snackContainer.append(newSnack);

@@ -1,8 +1,10 @@
-const cart = [];
+let cart = [];
 
 const movieContainer = document.querySelector(".movie-container");
 
 const snackContainer = document.querySelector(".snack-container");
+
+const cartProducts = document.querySelector(".cart-products");
 
 const movieArray = [
   //   {
@@ -193,6 +195,22 @@ movieArray.forEach((item) => {
   newMovieImage.src = item.image;
   const newMovieButton = document.createElement("button");
   newMovieButton.classList.add("movie-button");
+  newMovieButton.innerText = "add to cart";
+  newMovieButton.onclick = function () {
+    cart.push(item);
+    const productImage = document.createElement("img");
+    productImage.src = item.image;
+    productImage.style.height = "50px";
+    productImage.style.width = "auto";
+    const details = `${item.title} - $${item.price}`;
+    const detailParagraph = document.createElement("p");
+    detailParagraph.innerText = details;
+    const product = document.createElement("div");
+    product.className = "cart-product";
+    product.append(productImage);
+    product.append(detailParagraph);
+    cartProducts.append(product);
+  };
   newMovie.append(
     newMovieTitle,
     newMovieYear,
@@ -207,7 +225,7 @@ movieArray.forEach((item) => {
 
 const snackArray = [
   {
-    brand: "Gushers",
+    title: "Gushers",
     price: 2.75,
     calories: 240,
     image: "assets/gushers.png",
@@ -215,7 +233,7 @@ const snackArray = [
       "Fruits? Nah, spoil yourself with some Gushers, and let the taste of fruit explode in your mouth!",
   },
   {
-    brand: "Warheads Sour Candy",
+    title: "Warheads Sour Candy",
     price: 1.5,
     calories: 50,
     image: "assets/warheads.png",
@@ -223,7 +241,7 @@ const snackArray = [
       "Best paired with our comedies, Warheads will bring the joy and delight to your laughter-filled movie experience.  ",
   },
   {
-    brand: "Big League Chew",
+    title: "Big League Chew",
     price: 1.75,
     calories: 50,
     image: "assets/bigleague.png",
@@ -231,14 +249,14 @@ const snackArray = [
       "Enjoy the 1980s with the classic, flavorful bubble gum bursting with an array of flavors.",
   },
   {
-    brand: "FunDip",
+    title: "FunDip",
     price: 2.0,
     calories: 92,
     image: "assets/fundip.png",
     description: "The most complicated way to ingest sugar imaginable.",
   },
   {
-    brand: "Gobstoppers",
+    title: "Gobstoppers",
     price: 2.25,
     calories: 120,
     image: "assets/gobstopper.png",
@@ -275,9 +293,9 @@ const snackArray = [
 snackArray.forEach((item) => {
   const newSnack = document.createElement("div");
   newSnack.classList.add("snack");
-  const newSnackBrand = document.createElement("p");
-  newSnackBrand.classList.add("brand");
-  newSnackBrand.textContent = item.brand;
+  const newSnackTitle = document.createElement("p");
+  newSnackTitle.classList.add("title");
+  newSnackTitle.textContent = item.title;
   const newSnackPrice = document.createElement("p");
   newSnackPrice.classList.add("snack-price");
   newSnackPrice.textContent = `$${item.price}`;
@@ -291,8 +309,24 @@ snackArray.forEach((item) => {
   newSnackImage.src = item.image;
   const newSnackButton = document.createElement("button");
   newSnackButton.classList.add("snack-button");
+  newSnackButton.innerText = "add to cart";
+  newSnackButton.onclick = function () {
+    cart.push(item);
+    const productImage = document.createElement("img");
+    productImage.src = item.image;
+    productImage.style.height = "50px";
+    productImage.style.width = "auto";
+    const details = `${item.title} - $${item.price}`;
+    const detailParagraph = document.createElement("p");
+    detailParagraph.innerText = details;
+    const product = document.createElement("div");
+    product.className = "cart-product";
+    product.append(productImage);
+    product.append(detailParagraph);
+    cartProducts.append(product);
+  };
   newSnack.append(
-    newSnackBrand,
+    newSnackTitle,
     newSnackPrice,
     newSnackCalories,
     newSnackDescription,
@@ -302,9 +336,9 @@ snackArray.forEach((item) => {
   snackContainer.append(newSnack);
 });
 
-const addSnack = (array, brand, price, calories, description) => {
+const addSnack = (array, title, price, calories, description) => {
   const newSnack = {
-    brand,
+    title,
     price,
     calories,
     description,
@@ -331,4 +365,38 @@ const calculateCartCosts = (itemsArray, taxPercentage) => {
   return { subtotal: subtotal, salesTax: salesTax, total: total };
 };
 const calculations = calculateCartCosts(snackArray, 0.06);
-console.log(calculations.subtotal);
+console.log(calculations.total);
+// Calculations should be a result of calculateCartCosts function.
+//May want to add prompt, but works well.
+const processCashPayment = (amountTendered, calculations) => {
+  return Math.round((amountTendered - calculations.total) * 100) / 100;
+};
+processCashPayment(40, calculations);
+console.log(processCashPayment(40, calculations));
+
+//code for modal functionality, powered by w3schools
+// Get the modal
+let modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+let btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function () {
+  modal.style.display = "block";
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};

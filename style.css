@@ -12,18 +12,50 @@ header {
   padding-left: 20px;
   width: 100vh;
   height: 200px;
+  display: flex;
+  flex-direction: row;
   /* position: fixed; */
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  align-items: right;
+  position: absolute;
+  top: 40px;
+  right: 200px;
 }
 
 .cart-icon {
   height: 150px;
   width: 150px;
+  position: absolute;
+  top: -30px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.cart-icon:hover {
+  background-color: white;
+  border-radius: 90px;
 }
 
 .phone-icon {
   height: 100px;
   width: 100px;
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  margin: 0px;
+  padding: 0px;
 }
+
+.phone-icon:hover {
+  background-color: white;
+  border-radius: 90px;
+  border: 20px solid white;
+}
+
 .cart-product {
   display: flex;
   align-items: center;
@@ -32,14 +64,15 @@ header {
 .concept-container {
   color: white;
   padding: 20px;
-  font-family: "Rock Salt", cursive;
+  font-family: "Cabin", sans-serif;
+  font-size: 25px;
 }
 
 .movieh1,
 .snacksh1 {
   background-color: rgb(210, 63, 205);
   border: 5px solid white;
-  padding-left: 20px;
+  padding-left: 30px;
   width: 100vh;
   font-family: "Rock Salt", cursive;
 }
@@ -55,9 +88,27 @@ h1 {
   flex-wrap: wrap;
 }
 
-.movie {
-  width: 50vh;
+div.movie {
+  border: 10px solid rgb(210, 63, 205);
+  padding: 20px;
+  width: 24vh;
   background-color: white;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Cabin", sans-serif;
+}
+
+div.movie img {
+  width: 200px;
+  border: 10px solid rgb(66, 163, 211);
+  margin: 0px;
+  position: relative;
+}
+div.movie button {
+  background-color: rgb(66, 163, 211);
+  color: white;
+  position: relative;
 }
 
 .snack {
@@ -69,6 +120,29 @@ h1 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+div.snack {
+  border: 10px solid rgb(210, 63, 205);
+  padding: 20px;
+  width: 24vh;
+  background-color: white;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Cabin", sans-serif;
+}
+
+div.snack img {
+  width: 200px;
+  border: 10px solid rgb(66, 163, 211);
+  margin: 0px;
+  position: relative;
+}
+div.snack button {
+  background-color: rgb(66, 163, 211);
+  color: white;
+  position: relative;
 }
 
 .modal {

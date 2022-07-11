@@ -181,3 +181,10 @@ div.snack button {
   text-decoration: none;
   cursor: pointer;
 }
+
+.cash,
+.credit,
+.cash-btn,
+.card-btn {
+  display: none;
+}

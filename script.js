@@ -1,4 +1,4 @@
-let cart = [];
+const cart = [];
 
 const movieContainer = document.querySelector(".movie-container");
 
@@ -6,69 +6,9 @@ const snackContainer = document.querySelector(".snack-container");
 
 const cartProducts = document.querySelector(".cart-products");
 
-const movieArray = [
-  //   {
-  //     title: "Die Hard",
-  //     year: 1988,
-  //     price: 6.5,
-  //     genre: "Action",
-  //   },
-  //   {
-  //     title: "Matrix",
-  //     year: 1999,
-  //     price: 7.0,
-  //     genre: "Action",
-  //   },
-  //   {
-  //     title: "GhostBusters",
-  //     year: 1984,
-  //     price: 6.5,
-  //     genre: "Comedy",
-  //   },
-  //   {
-  //     title: "Monty Python and the Holy Grail",
-  //     year: 1975,
-  //     price: 6.0,
-  //     genre: "Comedy",
-  //   },
-  //   {
-  //     title: "Robocop",
-  //     year: 1987,
-  //     price: 6.5,
-  //     genre: "Action",
-  //   },
-  //   {
-  //     title: "Back to the Future",
-  //     year: 1985,
-  //     price: 6.5,
-  //     genre: "Comedy",
-  //   },
-  //   {
-  //     title: "Total Recall",
-  //     year: 1990,
-  //     price: 7.0,
-  //     genre: "Sci-fi",
-  //   },
-  //   {
-  //     title: "Plain Trains and Automobile",
-  //     year: 1987,
-  //     price: 6.5,
-  //     genre: "Comedy",
-  //   },
-  //   {
-  //     title: "First Blood",
-  //     year: 1982,
-  //     price: 6.5,
-  //     genre: "Drama",
-  //   },
+const productContainer = document.querySelector(".product-container");
 
-  //   {
-  //     title: "Independence Day",
-  //     year: 1996,
-  //     price: 7.0,
-  //     genre: "Sci-fi",
-  //     description:
-  //   },
+const movieArray = [
   {
     title: "The Breakfast Club",
     year: 1985,
@@ -160,68 +100,6 @@ const movieArray = [
       "A man learns something extraordinary about himself after a devastating accident.",
   },
 ];
-const addMovie = (array, title, year, price, genre) => {
-  const newMovie = {
-    title,
-    year,
-    price,
-    genre,
-    description,
-  };
-  return array.push(newMovie);
-};
-
-console.log(movieArray);
-
-movieArray.forEach((item) => {
-  const newMovie = document.createElement("div");
-  newMovie.classList.add("movie");
-  const newMovieTitle = document.createElement("p");
-  newMovieTitle.classList.add("title");
-  newMovieTitle.textContent = item.title;
-  const newMovieYear = document.createElement("p");
-  newMovieYear.classList.add("year");
-  newMovieYear.textContent = item.year;
-  const newMoviePrice = document.createElement("p");
-  newMoviePrice.classList.add("movie-price");
-  newMoviePrice.textContent = `$${item.price}`;
-  const newMovieGenre = document.createElement("p");
-  newMovieGenre.classList.add("genre");
-  newMovieGenre.textContent = item.genre;
-  const newMovieDescription = document.createElement("p");
-  newMovieDescription.classList.add("movie-description");
-  newMovieDescription.textContent = item.description;
-  const newMovieImage = document.createElement("img");
-  newMovieImage.src = item.image;
-  const newMovieButton = document.createElement("button");
-  newMovieButton.classList.add("movie-button");
-  newMovieButton.innerText = "add to cart";
-  newMovieButton.onclick = function () {
-    cart.push(item);
-    const productImage = document.createElement("img");
-    productImage.src = item.image;
-    productImage.style.height = "50px";
-    productImage.style.width = "auto";
-    const details = `${item.title} - $${item.price}`;
-    const detailParagraph = document.createElement("p");
-    detailParagraph.innerText = details;
-    const product = document.createElement("div");
-    product.className = "cart-product";
-    product.append(productImage);
-    product.append(detailParagraph);
-    cartProducts.append(product);
-  };
-  newMovie.append(
-    newMovieTitle,
-    newMovieYear,
-    newMoviePrice,
-    newMovieGenre,
-    newMovieDescription,
-    newMovieImage,
-    newMovieButton
-  );
-  movieContainer.append(newMovie);
-});
 
 const snackArray = [
   {
@@ -263,34 +141,79 @@ const snackArray = [
     description: "A rainbow of flavor that lasts forever and ever.",
   },
 ];
-//   {
-//     brand: "Kettlecorn",
-//     price: 2.25,
-//     calories:
-//   },
-//   {
-//     brand: "Voodoo Chips",
-//     price: 2.25,
-//     calories:
-//   },
-//   {
-//     brand: "Funyons",
-//     price: 2.25,
-//     calories:
-//   },
-//   {
-//     brand: "Kit-Kat",
-//     price: 2.25,
-//     calories:
-//   },
-//   {
-//     brand: "Doritos",
-//     price: 2.25,
-//     calories:
-//   },
-// ];
 
-snackArray.forEach((item) => {
+// console.log(movieArray);
+
+// displays movies on menu
+movieArray.forEach((item, index) => {
+  cartProducts.innerHTML = "";
+  const newMovie = document.createElement("div");
+  newMovie.classList.add("movie");
+  const newMovieTitle = document.createElement("p");
+  newMovieTitle.classList.add("title");
+  newMovieTitle.textContent = item.title;
+  const newMovieYear = document.createElement("p");
+  newMovieYear.classList.add("year");
+  newMovieYear.textContent = item.year;
+  const newMoviePrice = document.createElement("p");
+  newMoviePrice.classList.add("movie-price");
+  newMoviePrice.textContent = `$${item.price}`;
+  const newMovieGenre = document.createElement("p");
+  newMovieGenre.classList.add("genre");
+  newMovieGenre.textContent = item.genre;
+  const newMovieDescription = document.createElement("p");
+  newMovieDescription.classList.add("movie-description");
+  newMovieDescription.textContent = item.description;
+  const newMovieImage = document.createElement("img");
+  newMovieImage.src = item.image;
+  const newMovieButton = document.createElement("button");
+  // newMovieButton.classList.add("movie-button", "add-to-cart");
+  newMovieButton.setAttribute("data-category", "movie");
+  newMovieButton.setAttribute("data-index", index);
+  newMovieButton.innerText = "add to cart";
+
+  // newMovieButton.onclick = function () {
+  //   cart.push(item);
+  //   const productImage = document.createElement("img");
+  //   productImage.src = item.image;
+  //   productImage.style.height = "50px";
+  //   productImage.style.width = "auto";
+  //   const details = `${item.title} - $${item.price}`;
+  //   const detailParagraph = document.createElement("p");
+  //   detailParagraph.innerText = details;
+  //   const product = document.createElement("div");
+  //   product.className = "cart-product";
+  //
+  //
+  //   product.append(productImage);
+  //   product.append(detailParagraph);
+  //   product.append(newCartButton);
+  //   cartProducts.append(product);
+  //}
+  newMovie.append(
+    newMovieTitle,
+    newMovieYear,
+    newMoviePrice,
+    newMovieGenre,
+    newMovieDescription,
+    newMovieImage,
+    newMovieButton
+  );
+  movieContainer.append(newMovie);
+});
+
+productContainer.addEventListener("click", (e) => {
+  if (e.target.getAttribute("data-category") === "movie") {
+    const index = e.target.getAttribute("data-index");
+    cart.push(movieArray[index]);
+  } else if (e.target.getAttribute("data-category") === "snack") {
+    const index = e.target.getAttribute("data-index");
+    cart.push(snackArray[index]);
+  }
+});
+
+// displays snacks on the menu
+snackArray.forEach((item, index) => {
   const newSnack = document.createElement("div");
   newSnack.classList.add("snack");
   const newSnackTitle = document.createElement("p");
@@ -308,23 +231,10 @@ snackArray.forEach((item) => {
   const newSnackImage = document.createElement("img");
   newSnackImage.src = item.image;
   const newSnackButton = document.createElement("button");
-  newSnackButton.classList.add("snack-button");
+  // newSnackButton.classList.add("snack-button", "add-to-cart");
+  newSnackButton.setAttribute("data-category", "snack");
+  newSnackButton.setAttribute("data-index", index);
   newSnackButton.innerText = "add to cart";
-  newSnackButton.onclick = function () {
-    cart.push(item);
-    const productImage = document.createElement("img");
-    productImage.src = item.image;
-    productImage.style.height = "50px";
-    productImage.style.width = "auto";
-    const details = `${item.title} - $${item.price}`;
-    const detailParagraph = document.createElement("p");
-    detailParagraph.innerText = details;
-    const product = document.createElement("div");
-    product.className = "cart-product";
-    product.append(productImage);
-    product.append(detailParagraph);
-    cartProducts.append(product);
-  };
   newSnack.append(
     newSnackTitle,
     newSnackPrice,
@@ -335,6 +245,17 @@ snackArray.forEach((item) => {
   );
   snackContainer.append(newSnack);
 });
+
+const addMovie = (array, title, year, price, genre) => {
+  const newMovie = {
+    title,
+    year,
+    price,
+    genre,
+    description,
+  };
+  return array.push(newMovie);
+};
 
 const addSnack = (array, title, price, calories, description) => {
   const newSnack = {
@@ -350,7 +271,7 @@ const addSnack = (array, title, price, calories, description) => {
 // Function takes an array of snack/movies objects and tax percentage of 0.06, or whatever we choose.
 //
 //Give the subtotal, sales tax, and the total.
-//add to HTML (<p class="subTotal"></p>), creat a class for each, then document.querySelector(".salesText").textContent = calculations.salesText
+//add to HTML (<p class="subTotal"></p>), create a class for each, then document.querySelector(".salesText").textContent = calculations.salesText
 
 // Cart Modal Appears
 const calculateCartCosts = (itemsArray, taxPercentage) => {
@@ -385,9 +306,61 @@ let btn = document.getElementById("myBtn");
 let span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal
-btn.onclick = function () {
+btn.addEventListener("click", (e) => {
+  cartProducts.innerHTML = "";
   modal.style.display = "block";
+  cart.forEach((item, index) => {
+    const productImage = document.createElement("img");
+    productImage.src = item.image;
+    productImage.style.height = "50px";
+    productImage.style.width = "auto";
+    const details = `${item.title} - $${item.price}`;
+    const detailParagraph = document.createElement("p");
+    detailParagraph.innerText = details;
+    const product = document.createElement("div");
+    product.className = "cart-product";
+    const newCartButton = document.createElement("button");
+    newCartButton.classList.add("remove-item");
+    newCartButton.textContent = "Remove from cart";
+    product.setAttribute("data-index", index);
+    product.append(productImage);
+    product.append(detailParagraph);
+    product.append(newCartButton);
+    cartProducts.append(product);
+  });
+});
+
+const printCart = () => {
+  cartProducts.innerHTML = "";
+  cart.forEach((item, index) => {
+    const productImage = document.createElement("img");
+    productImage.src = item.image;
+    productImage.style.height = "50px";
+    productImage.style.width = "auto";
+    const details = `${item.title} - $${item.price}`;
+    const detailParagraph = document.createElement("p");
+    detailParagraph.innerText = details;
+    const product = document.createElement("div");
+    product.className = "cart-product";
+    const newCartButton = document.createElement("button");
+    newCartButton.classList.add("remove-item");
+    newCartButton.textContent = "Remove from cart";
+    product.setAttribute("data-index", index);
+    product.append(productImage);
+    product.append(detailParagraph);
+    product.append(newCartButton);
+    cartProducts.append(product);
+  });
 };
+
+cartProducts.addEventListener("click", (e) => {
+  cartProducts.innerHTML = "";
+  if (e.target.classList.contains("remove-item")) {
+    const index = e.target.parentNode.getAttribute("data-index");
+    cart.splice(index, 1);
+    printCart();
+  }
+});
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {

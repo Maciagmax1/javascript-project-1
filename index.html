@@ -49,19 +49,24 @@
             <!-- Modal content -->
             
             <div class="modal-content">
+              <div class="close-container">
               <span class="close">&times;</span>
+            </div>
               <div class="cart-products">
               </div>
               <p class="subtotal"></p> 
             <div class="checkout-container">
               <button class="checkout-button">Checkout</button>
            </div>
+           <div class="payment-method-button-container">
               <button class="cash-btn">Pay With Cash</button>
               <button class="card-btn">Pay With Card</button>
               <form class="cash">
                 <label for="cash-tendered">Enter the amount in dollars</label>
         <input type="number" name="cash-tendered" id="cash-tendered" />
+        <div class="place-order-container">
         <button class="order-button">Place Order</button>
+      </div>
               </form>
               <form class="credit">
                 <label for="credit-number">Credit Card Number</label>
@@ -70,8 +75,11 @@
                 <input type="text" name="credit-exp" id="credit-exp" placeholder="MM/YY">
                 <label for="CVV">Security Code</label>
                 <input type="password" name="credit-number" id="CVV" placeholder="CVV" />
-                <button class="order-button">Place Order</button>
+                <div class="place-order-container">
+                  <button class="order-button">Place Order</button>
+                </div>
               </form>
+            </div>
               <div class="receipt-container">
               <div class="receipt cash-receipt-info">
                 <h1 class="cash-receipt-info"><img src="assets/video-nugget.png" alt=""></h1>

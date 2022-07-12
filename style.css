@@ -18,6 +18,11 @@ header {
   /* position: fixed; */
 }
 
+.vnsmaller {
+  display: flex;
+  align-items: center;
+}
+
 .vnlarger {
   display: none;
 }
@@ -160,6 +165,7 @@ div.snack button:hover {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
+  padding-top: 0px;
   border: 1px solid #888;
   width: 80%;
   border: 10px solid rgb(66, 163, 211);
@@ -167,14 +173,20 @@ div.snack button:hover {
   font-family: "Cabin", sans-serif;
   color: rgb(66, 163, 211);
 }
+
+.close-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
 /* The Close X Button */
 .close {
   color: #aaaaaa;
-  position: fixed;
-  right: 140px;
-  top: 110px;
   font-size: 50px;
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .cart-products img {
@@ -234,14 +246,36 @@ button.checkout-button {
 .credit,
 .cash-btn,
 .card-btn,
+.place-order-container,
 .card-receipt-info,
 .cash-receipt-info {
   display: none;
 }
 
+.cash-btn,
+.card-btn,
+.place-order-container {
+  background-color: white;
+  font-family: "Cabin", sans-serif;
+  color: rgb(66, 163, 211);
+  border: 5px solid rgb(66, 163, 211);
+  width: 100%;
+  height: 50px;
+  font-size: 30px;
+}
+.order-button {
+  background-color: white;
+  font-family: "Cabin", sans-serif;
+  color: rgb(66, 163, 211);
+  border: 5px solid rgb(66, 163, 211);
+  width: 100%;
+  height: 50px;
+  font-size: 30px;
+}
+
 .cash,
 form.credit {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 @media only screen and (min-device-width: 860px) {
@@ -252,7 +286,8 @@ form.credit {
     display: none;
   }
   .vnlarger {
-    display: inline-block;
+    display: flex;
+    align-items: center;
   }
   .cart-icon {
     height: 200px;

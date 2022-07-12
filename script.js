@@ -382,13 +382,13 @@ window.onclick = function (event) {
 
 cashBtn.addEventListener("click", (e) => {
   if ((cardForm.style.display = "none")) {
-    cashForm.style.display = "block";
+    cashForm.style.display = "flex";
   }
 });
 
 cardBtn.addEventListener("click", (e) => {
   if ((cashForm.style.display = "none")) {
-    cardForm.style.display = "block";
+    cardForm.style.display = "flex";
   }
 });
 

@@ -142,7 +142,7 @@ const snackArray = [
   {
     title: "Gushers",
     price: 2.75,
-    calories: 240,
+    calories: "240 calories",
     image: "assets/gushers.png",
     description:
       "Fruits? Nah, spoil yourself with some Gushers, and let the taste of fruit explode in your mouth!",
@@ -150,7 +150,7 @@ const snackArray = [
   {
     title: "Warheads Sour Candy",
     price: 1.5,
-    calories: 50,
+    calories: "50 calories",
     image: "assets/warheads.png",
     description:
       "Best paired with our comedies, Warheads will bring the joy and delight to your laughter-filled movie experience.  ",
@@ -158,7 +158,7 @@ const snackArray = [
   {
     title: "Big League Chew",
     price: 1.75,
-    calories: 50,
+    calories: "50 calories",
     image: "assets/bigleague.png",
     description:
       "Enjoy the 1980s with the classic, flavorful bubble gum bursting with an array of flavors.",
@@ -166,14 +166,14 @@ const snackArray = [
   {
     title: "FunDip",
     price: 2.0,
-    calories: 92,
+    calories: "92 calories",
     image: "assets/fundip.png",
     description: "The most complicated way to ingest sugar imaginable.",
   },
   {
     title: "Gobstoppers",
     price: 2.25,
-    calories: 120,
+    calories: "120 calories",
     image: "assets/gobstopper.png",
     description: "A rainbow of flavor that lasts forever and ever.",
   },

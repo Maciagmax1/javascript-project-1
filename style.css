@@ -288,6 +288,13 @@ form.credit {
   font-size: 25px;
 }
 
+.card-receipt-info img,
+.cash-receipt-info img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 /* .receipt-container {
   background-color: rgb(228, 243, 244);
   padding: 30px;

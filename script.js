@@ -207,7 +207,7 @@ movieArray.forEach((item, index) => {
   // newMovieButton.classList.add("movie-button", "add-to-cart");
   newMovieButton.setAttribute("data-category", "movie");
   newMovieButton.setAttribute("data-index", index);
-  newMovieButton.innerText = "add to cart";
+  newMovieButton.innerText = "ADD TO CART";
 
   newMovie.append(
     newMovieTitle,
@@ -253,7 +253,7 @@ snackArray.forEach((item, index) => {
   // newSnackButton.classList.add("snack-button", "add-to-cart");
   newSnackButton.setAttribute("data-category", "snack");
   newSnackButton.setAttribute("data-index", index);
-  newSnackButton.innerText = "add to cart";
+  newSnackButton.innerText = "ADD TO CART";
   newSnack.append(
     newSnackTitle,
     newSnackPrice,

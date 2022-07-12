@@ -55,7 +55,23 @@
               <span class="close">&times;</span>
               <div class="cart-products">
               </div>
+              <p class="subtotal"></p> 
               <button class="checkout-button">Checkout</button>
+              <button class="cash-btn">Pay With Cash</button>
+              <button class="card-btn">Pay With Card</button>
+              <form class="cash">
+                <label for="cash-tendered">Enter the amount in dollars</label>
+        <input type="number" name="cash-tendered" id="cash-tendered" />
+        <button class="order-button">Place Order</button>
+              </form>
+              <form class="credit">
+                <label for="credit-number">Credit Card Number</label>
+                <input type="text" name="credit-number" id="credit-number" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" />
+                <label for="credit-exp">Expiration Date</label>
+                <input type="text" name="credit-exp" id="credit-exp" placeholder="MM/YY">
+                <label for="CVV">Security Code</label>
+                <input type="password" name="credit-number" id="credit-number" placeholder="CVV" />
+              </form>
             </div>
 </div>
     </main>

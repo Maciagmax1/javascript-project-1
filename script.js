@@ -8,6 +8,31 @@ const cartProducts = document.querySelector(".cart-products");
 
 const productContainer = document.querySelector(".product-container");
 
+const checkoutButton = document.querySelector(".checkout-button");
+
+const cashBtn = document.querySelector(".cash-btn");
+
+const cardBtn = document.querySelector(".card-btn");
+
+const subtotalDisplay = document.querySelector(".subtotal");
+
+const calculateCartCosts = (itemsArray, taxPercentage) => {
+  let subtotal = 0;
+  let salesTax = 0;
+  let total = 0;
+  for (const item of itemsArray) {
+    subtotal += item.price;
+  }
+  salesTax = Math.round(subtotal * taxPercentage * 100) / 100;
+  total = subtotal + salesTax;
+  return {
+    subtotal: subtotal,
+    salesTax: salesTax,
+    total: total,
+  };
+};
+const calculations = calculateCartCosts(cart, 0.06);
+
 const movieArray = [
   {
     title: "The Breakfast Club",
@@ -274,19 +299,7 @@ const addSnack = (array, title, price, calories, description) => {
 //add to HTML (<p class="subTotal"></p>), create a class for each, then document.querySelector(".salesText").textContent = calculations.salesText
 
 // Cart Modal Appears
-const calculateCartCosts = (itemsArray, taxPercentage) => {
-  let subtotal = 0;
-  let salesTax = 0;
-  let total = 0;
-  for (const item of itemsArray) {
-    subtotal += item.price;
-  }
-  salesTax = Math.round(subtotal * taxPercentage * 100) / 100;
-  total = subtotal + salesTax;
-  return { subtotal: subtotal, salesTax: salesTax, total: total };
-};
-const calculations = calculateCartCosts(snackArray, 0.06);
-console.log(calculations.total);
+
 // Calculations should be a result of calculateCartCosts function.
 //May want to add prompt, but works well.
 const processCashPayment = (amountTendered, calculations) => {
@@ -304,35 +317,12 @@ let btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal
-btn.addEventListener("click", (e) => {
-  cartProducts.innerHTML = "";
-  modal.style.display = "block";
-  cart.forEach((item, index) => {
-    const productImage = document.createElement("img");
-    productImage.src = item.image;
-    productImage.style.height = "50px";
-    productImage.style.width = "auto";
-    const details = `${item.title} - $${item.price}`;
-    const detailParagraph = document.createElement("p");
-    detailParagraph.innerText = details;
-    const product = document.createElement("div");
-    product.className = "cart-product";
-    const newCartButton = document.createElement("button");
-    newCartButton.classList.add("remove-item");
-    newCartButton.textContent = "Remove from cart";
-    product.setAttribute("data-index", index);
-    product.append(productImage);
-    product.append(detailParagraph);
-    product.append(newCartButton);
-    cartProducts.append(product);
-  });
-});
-
+let sum = 0;
+let total = null;
 const printCart = () => {
   cartProducts.innerHTML = "";
   cart.forEach((item, index) => {
+    sum += item.price;
     const productImage = document.createElement("img");
     productImage.src = item.image;
     productImage.style.height = "50px";
@@ -351,7 +341,37 @@ const printCart = () => {
     product.append(newCartButton);
     cartProducts.append(product);
   });
+  total = sum + sum * 0.06;
+  subtotalDisplay.textContent = `Subtotal: $${sum}`;
+  // subtotalDisplay.textContent = `Subtotal: $${sum}`;
 };
+// When the user clicks the button, open the modal
+
+btn.addEventListener("click", (e) => {
+  modal.style.display = "block";
+  printCart();
+  // cart.forEach((item, index) => {
+  //   const productImage = document.createElement("img");
+  //   productImage.src = item.image;
+  //   productImage.style.height = "50px";
+  //   productImage.style.width = "auto";
+  //   const details = `${item.title} - $${item.price}`;
+  //   const detailParagraph = document.createElement("p");
+  //   detailParagraph.innerText = details;
+  //   const product = document.createElement("div");
+  //   product.className = "cart-product";
+  //   const newCartButton = document.createElement("button");
+  //   newCartButton.classList.add("remove-item");
+  //   newCartButton.textContent = "Remove from cart";
+  //   subtotalDisplay.textContent = `Subtotal: $${calculations.subtotal}`;
+  //   console.log(calculations);
+  //   product.setAttribute("data-index", index);
+  //   product.append(productImage);
+  //   product.append(detailParagraph);
+  //   product.append(newCartButton);
+  //   cartProducts.append(product);
+  // });
+});
 
 cartProducts.addEventListener("click", (e) => {
   cartProducts.innerHTML = "";
@@ -360,6 +380,16 @@ cartProducts.addEventListener("click", (e) => {
     cart.splice(index, 1);
     printCart();
   }
+});
+
+checkoutButton.addEventListener("click", (e) => {
+  e.preventDefault;
+  cashBtn.style.display = "block";
+});
+
+checkoutButton.addEventListener("click", (e) => {
+  e.preventDefault;
+  cardBtn.style.display = "block";
 });
 
 // When the user clicks on <span> (x), close the modal

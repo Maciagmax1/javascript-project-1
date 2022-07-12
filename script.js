@@ -28,6 +28,33 @@ const cardReceiptInfo = document.querySelectorAll(".card-receipt-info");
 
 const receiptContainer = document.querySelector(".receipt-container");
 
+const cashReceiptContainer = document.querySelector(".cash-receipt-container");
+
+const cardReceiptContainer = document.querySelector(".card-receipt-container");
+
+const cashDisplay = document.querySelector(".cash-off");
+
+const cardDisplay = document.querySelector(".card-off");
+
+let userInputAmountTendered = null;
+
+// receipt variables
+const cashSubTotal = document.querySelector(".cash-sub-total");
+
+const cashTaxTotal = document.querySelector(".cash-tax-total");
+
+const cashTotal = document.querySelector(".cash-total");
+
+const cashTendered = document.querySelector(".cash-tendered");
+
+const change = document.querySelector(".change");
+
+const cardSubTotal = document.querySelector(".card-sub-total");
+
+const cardTaxTotal = document.querySelector(".card-tax-total");
+
+const cardTotal = document.querySelector(".card-total");
+
 const calculateCartCosts = (itemsArray, taxPercentage) => {
   let subtotal = 0;
   let salesTax = 0;
@@ -310,14 +337,17 @@ let modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
 let btn = document.getElementById("myBtn");
-
 // Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];
-
+let sum = 0;
+let total = null;
+let taxAmount = sum * 0.06;
+let changeValue = 0;
 const printCart = () => {
   cartProducts.innerHTML = "";
-  let sum = 0;
-  let total = null;
+  sum = 0;
+  total = null;
+  taxAmount = sum * 0.06;
   cart.forEach((item, index) => {
     sum += item.price;
     const productImage = document.createElement("img");
@@ -338,9 +368,17 @@ const printCart = () => {
     product.append(newCartButton);
     cartProducts.append(product);
   });
-  total = sum + sum * 0.06;
+  total = Math.round((sum + sum * 0.06) * 100) / 100;
+  taxAmount = Math.round(sum * 0.06 * 100) / 100;
   subtotalDisplay.textContent = `Subtotal: $${sum}`;
-  // subtotalDisplay.textContent = `Subtotal: $${sum}`;
+  cashSubTotal.textContent = `Subtotal: $${sum}`;
+  cashTaxTotal.textContent = `Tax: $${taxAmount}`;
+  cashTotal.textContent = `Total: $${total}`;
+  cashTendered.textContent = `Cash Tendered: $${userInputAmountTendered}`;
+  change.textContent = `Change: $${changeValue}`;
+  cardTaxTotal.textContent = `Tax: $${taxAmount}`;
+  cardSubTotal.textContent = `Subtotal: $${sum}`;
+  cardTotal.textContent = `Total: $${total}`;
 };
 // When the user clicks the button, open the modal
 
@@ -360,12 +398,8 @@ cartProducts.addEventListener("click", (e) => {
 
 checkoutButton.addEventListener("click", (e) => {
   e.preventDefault;
-  cashBtn.style.display = "block";
-});
-
-checkoutButton.addEventListener("click", (e) => {
-  e.preventDefault;
   cardBtn.style.display = "block";
+  cashBtn.style.display = "block";
 });
 
 // When the user clicks on <span> (x), close the modal
@@ -382,27 +416,42 @@ window.onclick = function (event) {
 
 cashBtn.addEventListener("click", (e) => {
   if ((cardForm.style.display = "none")) {
+<<<<<<< HEAD
     cashForm.style.display = "flex";
+=======
+    cashForm.style.display = "block";
+    cardBtn.style.display = "none";
+    cashBtn.style.display = "none";
+>>>>>>> f81b8b938160b07eb1b5cd0b4164dfef3fb04a97
   }
 });
 
 cardBtn.addEventListener("click", (e) => {
   if ((cashForm.style.display = "none")) {
+<<<<<<< HEAD
     cardForm.style.display = "flex";
+=======
+    cardForm.style.display = "block";
+    cardBtn.style.display = "none";
+    cashBtn.style.display = "none";
+>>>>>>> f81b8b938160b07eb1b5cd0b4164dfef3fb04a97
   }
 });
 
-// receiptContainer.addEventListener("click", (e) => {
-//   preventDefault();
-//   if (
-//     e.target.classList.contains("order-button") &&
-//     (cashReceiptInfo.style.display = "none")
-//   ) {
-//     cardReceiptInfo.style.display = "block";
-//   } else if (
-//     e.target.classList.contains("order-button") &&
-//     (cardReceiptInfo.style.display = "none")
-//   ) {
-//     cashReceiptInfo.style.display = "block";
-//   }
-// });
+cashForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  userInputAmountTendered = document.querySelector("#amount-tendered").value;
+  changeValue = userInputAmountTendered - total;
+  cashDisplay.style.display = "block";
+  cashForm.style.display = "none";
+  checkoutButton.style.display = "none";
+  printCart();
+});
+
+cardForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  cardDisplay.style.display = "block";
+  cardForm.style.display = "none";
+  checkoutButton.style.display = "none";
+  printCart();
+});

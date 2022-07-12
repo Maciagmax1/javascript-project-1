@@ -246,9 +246,14 @@ button.checkout-button {
 .credit,
 .cash-btn,
 .card-btn,
+<<<<<<< HEAD
 .place-order-container,
 .card-receipt-info,
 .cash-receipt-info {
+=======
+.cash-off,
+.card-off {
+>>>>>>> f81b8b938160b07eb1b5cd0b4164dfef3fb04a97
   display: none;
 }
 

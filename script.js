@@ -83,6 +83,24 @@ const movieArray = [
       "Five disparate high school students meet in Saturday detention, and discover they have a lot more in common than they thought.",
   },
   {
+    title: "Dirty Dancing",
+    year: 1987,
+    price: 6.5,
+    genre: "Romance",
+    image: "assets/dirty-dancing.png",
+    description:
+      "Expecting the usual tedium that accompanies a summer in the Catskills with her family, 17-year-old Frances 'Baby' Houseman is surprised to find herself stepping into the shoes of a professional hoofer—and unexpectedly falling in love.",
+  },
+  {
+    title: "Alien",
+    year: 1979,
+    price: 6.0,
+    genre: "Sci-fi",
+    image: "assets/alien.png",
+    description:
+      "An isolated crew on a remote spaceship is unaware of the impending nightmare set to descend upon them when the alien parasite planted inside its unfortunate host is birthed.",
+  },
+  {
     title: "American Psycho",
     year: 2000,
     price: 7.5,
@@ -109,24 +127,7 @@ const movieArray = [
     description:
       "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives.",
   },
-  {
-    title: "Alien",
-    year: 1979,
-    price: 6.0,
-    genre: "Sci-fi",
-    image: "assets/alien.png",
-    description:
-      "An isolated crew on a remote spaceship is unaware of the impending nightmare set to descend upon them when the alien parasite planted inside its unfortunate host is birthed.",
-  },
-  {
-    title: "Dirty Dancing",
-    year: 1987,
-    price: 6.5,
-    genre: "Romance",
-    image: "assets/dirty-dancing.png",
-    description:
-      "Expecting the usual tedium that accompanies a summer in the Catskills with her family, 17-year-old Frances 'Baby' Houseman is surprised to find herself stepping into the shoes of a professional hoofer—and unexpectedly falling in love.",
-  },
+
   {
     title: "Grease",
     year: 1979,
@@ -416,32 +417,24 @@ window.onclick = function (event) {
 
 cashBtn.addEventListener("click", (e) => {
   if ((cardForm.style.display = "none")) {
-<<<<<<< HEAD
-    cashForm.style.display = "flex";
-=======
     cashForm.style.display = "block";
     cardBtn.style.display = "none";
     cashBtn.style.display = "none";
->>>>>>> f81b8b938160b07eb1b5cd0b4164dfef3fb04a97
   }
 });
 
 cardBtn.addEventListener("click", (e) => {
   if ((cashForm.style.display = "none")) {
-<<<<<<< HEAD
-    cardForm.style.display = "flex";
-=======
     cardForm.style.display = "block";
     cardBtn.style.display = "none";
     cashBtn.style.display = "none";
->>>>>>> f81b8b938160b07eb1b5cd0b4164dfef3fb04a97
   }
 });
 
 cashForm.addEventListener("submit", (e) => {
   e.preventDefault();
   userInputAmountTendered = document.querySelector("#amount-tendered").value;
-  changeValue = userInputAmountTendered - total;
+  changeValue = Math.round((userInputAmountTendered - total) * 100) / 100;
   cashDisplay.style.display = "block";
   cashForm.style.display = "none";
   checkoutButton.style.display = "none";

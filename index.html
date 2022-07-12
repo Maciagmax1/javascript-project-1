@@ -70,8 +70,31 @@
                 <label for="credit-exp">Expiration Date</label>
                 <input type="text" name="credit-exp" id="credit-exp" placeholder="MM/YY">
                 <label for="CVV">Security Code</label>
-                <input type="password" name="credit-number" id="credit-number" placeholder="CVV" />
+                <input type="password" name="credit-number" id="CVV" placeholder="CVV" />
+                <button class="order-button">Place Order</button>
               </form>
+              <div class="receipt-container">
+              <div class="receipt cash-receipt-info">
+                <h1 class="cash-receipt-info"><img src="assets/video-nugget.png" alt=""></h1>
+                <p class="cash-receipt-info">XXX Street</p>
+                <p class="cash-receipt-info">City, State, Postal Code</p>
+                <p class="cash-receipt-info">Phone Number</p>
+                <p class="cash-receipt-info">DATE & TIME</p>
+                <p class="cash-receipt-info cash-sub-total"></p>
+                <p class="cash-receipt-info tax-total"></p>
+                <p class="cash-receipt-info cash-total"></p>
+              </div>
+              <div class="receipt card-receipt-info">
+                <h1 class="card-receipt-info"><img src="assets/video-nugget.png" alt=""></h1>
+                <p class="card-receipt-info">XXX Street</p>
+                <p class="card-receipt-info">City, State, Postal Code</p>
+                <p class="card-receipt-info">Phone Number</p>
+                <p class="card-receipt-info">DATE & TIME</p>
+                <p class="card-receipt-info card-sub-total"></p>
+                <p class="card-receipt-info tax-total"></p>
+                <p class="card-receipt-info card-total"></p>
+              </div>
+            </div>
             </div>
 </div>
     </main>

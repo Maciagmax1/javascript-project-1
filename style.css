@@ -180,6 +180,8 @@ div.snack button:hover {
 .cash,
 .credit,
 .cash-btn,
-.card-btn {
+.card-btn,
+.card-receipt-info,
+.cash-receipt-info {
   display: none;
 }

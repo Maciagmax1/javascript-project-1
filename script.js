@@ -16,6 +16,18 @@ const cardBtn = document.querySelector(".card-btn");
 
 const subtotalDisplay = document.querySelector(".subtotal");
 
+const cashForm = document.querySelector(".cash");
+
+const cardForm = document.querySelector(".credit");
+
+const placeOrderBtns = document.querySelectorAll(".order-button");
+
+const cashReceiptInfo = document.querySelectorAll(".cash-receipt-info");
+
+const cardReceiptInfo = document.querySelectorAll(".card-receipt-info");
+
+const receiptContainer = document.querySelector(".receipt-container");
+
 const calculateCartCosts = (itemsArray, taxPercentage) => {
   let subtotal = 0;
   let salesTax = 0;
@@ -197,24 +209,6 @@ movieArray.forEach((item, index) => {
   newMovieButton.setAttribute("data-index", index);
   newMovieButton.innerText = "ADD TO CART";
 
-  // newMovieButton.onclick = function () {
-  //   cart.push(item);
-  //   const productImage = document.createElement("img");
-  //   productImage.src = item.image;
-  //   productImage.style.height = "50px";
-  //   productImage.style.width = "auto";
-  //   const details = `${item.title} - $${item.price}`;
-  //   const detailParagraph = document.createElement("p");
-  //   detailParagraph.innerText = details;
-  //   const product = document.createElement("div");
-  //   product.className = "cart-product";
-  //
-  //
-  //   product.append(productImage);
-  //   product.append(detailParagraph);
-  //   product.append(newCartButton);
-  //   cartProducts.append(product);
-  //}
   newMovie.append(
     newMovieTitle,
     newMovieYear,
@@ -293,6 +287,7 @@ const addSnack = (array, title, price, calories, description) => {
 };
 
 // Able to calculate subtotal, sales tax, and total
+
 // Function takes an array of snack/movies objects and tax percentage of 0.06, or whatever we choose.
 //
 //Give the subtotal, sales tax, and the total.
@@ -302,6 +297,7 @@ const addSnack = (array, title, price, calories, description) => {
 
 // Calculations should be a result of calculateCartCosts function.
 //May want to add prompt, but works well.
+
 const processCashPayment = (amountTendered, calculations) => {
   return Math.round((amountTendered - calculations.total) * 100) / 100;
 };
@@ -317,10 +313,11 @@ let btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];
-let sum = 0;
-let total = null;
+
 const printCart = () => {
   cartProducts.innerHTML = "";
+  let sum = 0;
+  let total = null;
   cart.forEach((item, index) => {
     sum += item.price;
     const productImage = document.createElement("img");
@@ -350,27 +347,6 @@ const printCart = () => {
 btn.addEventListener("click", (e) => {
   modal.style.display = "block";
   printCart();
-  // cart.forEach((item, index) => {
-  //   const productImage = document.createElement("img");
-  //   productImage.src = item.image;
-  //   productImage.style.height = "50px";
-  //   productImage.style.width = "auto";
-  //   const details = `${item.title} - $${item.price}`;
-  //   const detailParagraph = document.createElement("p");
-  //   detailParagraph.innerText = details;
-  //   const product = document.createElement("div");
-  //   product.className = "cart-product";
-  //   const newCartButton = document.createElement("button");
-  //   newCartButton.classList.add("remove-item");
-  //   newCartButton.textContent = "Remove from cart";
-  //   subtotalDisplay.textContent = `Subtotal: $${calculations.subtotal}`;
-  //   console.log(calculations);
-  //   product.setAttribute("data-index", index);
-  //   product.append(productImage);
-  //   product.append(detailParagraph);
-  //   product.append(newCartButton);
-  //   cartProducts.append(product);
-  // });
 });
 
 cartProducts.addEventListener("click", (e) => {
@@ -403,3 +379,30 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
+cashBtn.addEventListener("click", (e) => {
+  if ((cardForm.style.display = "none")) {
+    cashForm.style.display = "block";
+  }
+});
+
+cardBtn.addEventListener("click", (e) => {
+  if ((cashForm.style.display = "none")) {
+    cardForm.style.display = "block";
+  }
+});
+
+// receiptContainer.addEventListener("click", (e) => {
+//   preventDefault();
+//   if (
+//     e.target.classList.contains("order-button") &&
+//     (cashReceiptInfo.style.display = "none")
+//   ) {
+//     cardReceiptInfo.style.display = "block";
+//   } else if (
+//     e.target.classList.contains("order-button") &&
+//     (cardReceiptInfo.style.display = "none")
+//   ) {
+//     cashReceiptInfo.style.display = "block";
+//   }
+// });

@@ -416,17 +416,25 @@ window.onclick = function (event) {
 
 cashBtn.addEventListener("click", (e) => {
   if ((cardForm.style.display = "none")) {
+<<<<<<< HEAD
+    cashForm.style.display = "flex";
+=======
     cashForm.style.display = "block";
     cardBtn.style.display = "none";
     cashBtn.style.display = "none";
+>>>>>>> f81b8b938160b07eb1b5cd0b4164dfef3fb04a97
   }
 });
 
 cardBtn.addEventListener("click", (e) => {
   if ((cashForm.style.display = "none")) {
+<<<<<<< HEAD
+    cardForm.style.display = "flex";
+=======
     cardForm.style.display = "block";
     cardBtn.style.display = "none";
     cashBtn.style.display = "none";
+>>>>>>> f81b8b938160b07eb1b5cd0b4164dfef3fb04a97
   }
 });
 

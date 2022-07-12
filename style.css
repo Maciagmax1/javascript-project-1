@@ -21,6 +21,7 @@ header {
 .vnsmaller {
   display: flex;
   align-items: center;
+  height: 200px;
 }
 
 .vnlarger {
@@ -46,11 +47,6 @@ header {
   top: -40px;
 }
 
-.cart-product {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-}
 .concept-container {
   color: rgb(228, 243, 244);
   padding: 25px;
@@ -78,6 +74,7 @@ h1 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 div.movie,
@@ -85,6 +82,7 @@ div.snack {
   border: 10px solid rgb(210, 63, 205);
   padding: 20px;
   width: 40%;
+  box-sizing: border-box;
   background-color: rgb(228, 243, 244);
   margin: 0px;
   display: flex;
@@ -162,7 +160,7 @@ div.snack button:hover {
 }
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #e4d1e4;
   margin: auto;
   padding: 20px;
   padding-top: 0px;
@@ -197,6 +195,10 @@ div.snack button:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: white;
+  border: 5px solid rgb(66, 163, 211);
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .remove-item {
@@ -208,14 +210,23 @@ div.snack button:hover {
 }
 
 button.checkout-button:hover,
-.remove-item:hover {
+.remove-item:hover,
+.cash-btn:hover,
+.card-btn:hover,
+.order-button:hover {
   background-color: rgb(66, 163, 211);
   color: white;
 }
 
-.subtotal {
+p.subtotal {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  background-color: white;
+  border: 5px solid rgb(66, 163, 211);
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .checkout-container {
@@ -246,14 +257,8 @@ button.checkout-button {
 .credit,
 .cash-btn,
 .card-btn,
-<<<<<<< HEAD
-.place-order-container,
-.card-receipt-info,
-.cash-receipt-info {
-=======
 .cash-off,
 .card-off {
->>>>>>> f81b8b938160b07eb1b5cd0b4164dfef3fb04a97
   display: none;
 }
 
@@ -283,9 +288,18 @@ form.credit {
   font-size: 25px;
 }
 
+/* .receipt-container {
+  background-color: rgb(228, 243, 244);
+  padding: 30px;
+  border: 5px solid rgb(66, 163, 211);
+} */
+
 @media only screen and (min-device-width: 860px) {
   header {
     height: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   .vnsmaller {
     display: none;

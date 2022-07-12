@@ -10,27 +10,23 @@ header {
   background-color: rgb(210, 63, 205);
   border: 8px solid white;
   padding-left: 20px;
-  width: 100%;
+  width: 100% auto;
   height: 200px;
   display: flex;
   flex-direction: row;
+  margin: 0px;
   /* position: fixed; */
 }
 
-header ul {
-  list-style: none;
-  display: flex;
-  align-items: right;
-  position: absolute;
-  top: 40px;
-  right: 200px;
+.vnlarger {
+  display: none;
 }
-
 .cart-icon {
   height: 150px;
   width: 150px;
   position: absolute;
-  top: -30px;
+  top: 28px;
+  right: 10px;
   margin: 0px;
   padding: 0px;
 }
@@ -52,7 +48,7 @@ header ul {
 }
 .concept-container {
   color: rgb(228, 243, 244);
-  padding: 20px;
+  padding: 25px;
   font-family: "Cabin", sans-serif;
   font-size: 25px;
 }
@@ -64,6 +60,7 @@ header ul {
   padding-left: 30px;
   width: 100% auto;
   font-family: "Rock Salt", cursive;
+  margin: 0px;
 }
 h1 {
   color: white;
@@ -82,12 +79,13 @@ div.movie,
 div.snack {
   border: 10px solid rgb(210, 63, 205);
   padding: 20px;
-  width: 24vh;
+  width: 40%;
   background-color: rgb(228, 243, 244);
   margin: 0px;
   display: flex;
   flex-direction: column;
   font-family: "Cabin", sans-serif;
+  justify-content: space-between;
 }
 
 div.movie .title,
@@ -104,6 +102,10 @@ div.snack .year,
 div.snack .snack-price,
 div.snack .calories {
   font-size: 20px;
+}
+
+div.movie .movie-description {
+  font-size: 18px;
 }
 
 div.snack img,
@@ -160,14 +162,65 @@ div.snack button:hover {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  border: 10px solid rgb(66, 163, 211);
+  font-size: 25px;
+  font-family: "Cabin", sans-serif;
+  color: rgb(66, 163, 211);
 }
-
-/* The Close Button */
+/* The Close X Button */
 .close {
   color: #aaaaaa;
-  float: right;
-  font-size: 28px;
+  position: fixed;
+  right: 140px;
+  top: 110px;
+  font-size: 50px;
   font-weight: bold;
+}
+
+.cart-products img {
+  border: 5px solid rgb(66, 163, 211);
+}
+
+.cart-product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.remove-item {
+  background-color: white;
+  font-family: "Cabin", sans-serif;
+  color: rgb(66, 163, 211);
+  border: 5px solid rgb(66, 163, 211);
+  height: 40px;
+}
+
+button.checkout-button:hover,
+.remove-item:hover {
+  background-color: rgb(66, 163, 211);
+  color: white;
+}
+
+.subtotal {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.checkout-container {
+  display: flex;
+  justify-content: flex-end;
+}
+button.checkout-button {
+  display: flex;
+  justify-content: flex-end;
+  background-color: white;
+  font-family: "Cabin", sans-serif;
+  font-size: 25px;
+  color: rgb(66, 163, 211);
+  border: 5px solid rgb(66, 163, 211);
+  height: 50px;
+  padding: 10px;
+  align-items: center;
 }
 
 .close:hover,
@@ -184,4 +237,57 @@ div.snack button:hover {
 .card-receipt-info,
 .cash-receipt-info {
   display: none;
+}
+
+.cash,
+form.credit {
+  font-size: 20px;
+}
+
+@media only screen and (min-device-width: 860px) {
+  header {
+    height: 300px;
+  }
+  .vnsmaller {
+    display: none;
+  }
+  .vnlarger {
+    display: inline-block;
+  }
+  .cart-icon {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 45px;
+    right: 20px;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .cart-icon:hover {
+    background-color: white;
+    border-radius: 90px;
+    border: 10px solid rgb(66, 163, 211);
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    margin: 0px;
+    padding: 0px;
+  }
+  div.movie,
+  div.snack {
+    width: 24vh;
+  }
+  .modal-content {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-device-width: 600px) {
+  div.movie,
+  div.snack {
+    width: 90%;
+  }
 }

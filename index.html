@@ -4,24 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cabin:ital@1&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
 
     <title>Video Nugget</title>
   </head>
   <body>
     <header>
-      <a href="#"></a><img class="vnsmaller" src="assets/video-nugget-smaller.png" alt="VIDEO NUGGET" /></a>
-      <a href="#"></a><img class="vnlarger" src="assets/video-nugget.png" alt="VIDEO NUGGET" /></a>
-      <!-- fill in href for links below -->
       <a href="#"
-          ><img src="assets/shopping-cart-icon.png" class="cart-icon" id="myBtn"  alt="Shopping Cart"
-        /></a>
+        ><img
+          class="vnsmaller"
+          src="assets/video-nugget-smaller.png"
+          alt="VIDEO NUGGET"
+      /></a>
+      <a href="#"
+        ><img class="vnlarger" src="assets/video-nugget.png" alt="VIDEO NUGGET"
+      /></a>
+      <a href="#"
+        ><img
+          src="assets/shopping-cart-icon.png"
+          class="cart-icon"
+          id="myBtn"
+          alt="Shopping Cart"
+      /></a>
     </header>
     <main>
       <div class="concept-container">
@@ -43,59 +59,76 @@
         </div>
         <section class="snack-container"></section>
       </div>
-      <!-- Cart Modal Appears when Cart icon clicked -->
-      <!-- The Modal -->
-          <div id="myModal" class="modal">
-            <!-- Modal content -->
-            
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <div class="cart-products">
-              </div>
-              <p class="subtotal"></p> 
-            <div class="checkout-container">
-              <button class="checkout-button">Checkout</button>
-           </div>
-              <button class="cash-btn">Pay With Cash</button>
-              <button class="card-btn">Pay With Card</button>
-              <form class="cash">
-                <label for="cash-tendered">Enter the amount in dollars</label>
-        <input type="number" name="cash-tendered" id="cash-tendered" />
-        <button class="order-button">Place Order</button>
-              </form>
-              <form class="credit">
-                <label for="credit-number">Credit Card Number</label>
-                <input type="text" name="credit-number" id="credit-number" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" />
-                <label for="credit-exp">Expiration Date</label>
-                <input type="text" name="credit-exp" id="credit-exp" placeholder="MM/YY">
-                <label for="CVV">Security Code</label>
-                <input type="password" name="credit-number" id="CVV" placeholder="CVV" />
-                <button class="order-button">Place Order</button>
-              </form>
-              <div class="receipt-container">
-              <div class="receipt cash-receipt-info">
-                <h1 class="cash-receipt-info"><img src="assets/video-nugget.png" alt=""></h1>
-                <p class="cash-receipt-info">XXX Street</p>
-                <p class="cash-receipt-info">City, State, Postal Code</p>
-                <p class="cash-receipt-info">Phone Number</p>
-                <p class="cash-receipt-info">DATE & TIME</p>
-                <p class="cash-receipt-info cash-sub-total"></p>
-                <p class="cash-receipt-info tax-total"></p>
-                <p class="cash-receipt-info cash-total"></p>
-              </div>
-              <div class="receipt card-receipt-info">
-                <h1 class="card-receipt-info"><img src="assets/video-nugget.png" alt=""></h1>
-                <p class="card-receipt-info">XXX Street</p>
-                <p class="card-receipt-info">City, State, Postal Code</p>
-                <p class="card-receipt-info">Phone Number</p>
-                <p class="card-receipt-info">DATE & TIME</p>
-                <p class="card-receipt-info card-sub-total"></p>
-                <p class="card-receipt-info tax-total"></p>
-                <p class="card-receipt-info card-total"></p>
-              </div>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="cart-products"></div>
+          <p class="subtotal"></p>
+          <div class="checkout-container">
+            <button class="checkout-button">Checkout</button>
+          </div>
+          <button class="cash-btn">Pay With Cash</button>
+          <button class="card-btn">Pay With Card</button>
+          <form class="cash">
+            <label for="amount-tendered">Enter the amount in dollars</label>
+            <input type="number" name="amount-tendered" id="amount-tendered" />
+            <button class="order-button">Place Order</button>
+          </form>
+          <form class="credit">
+            <label for="credit-number">Credit Card Number</label>
+            <input
+              type="text"
+              name="credit-number"
+              id="credit-number"
+              maxlength="16"
+              placeholder="xxxx xxxx xxxx xxxx"
+            />
+            <label for="credit-exp">Expiration Date</label>
+            <input
+              type="text"
+              name="credit-exp"
+              id="credit-exp"
+              placeholder="MM/YY"
+            />
+            <label for="CVV">Security Code</label>
+            <input
+              type="password"
+              name="credit-number"
+              id="CVV"
+              placeholder="CVV"
+            />
+            <button class="order-button">Place Order</button>
+          </form>
+          <div class="receipt-container">
+            <div class="cash-receipt-container cash-off cash-receipt-info">
+              <h1 class="cash-receipt-info">
+                <img src="assets/video-nugget.png" alt="" />
+              </h1>
+              <p class="cash-receipt-info">XXX Street</p>
+              <p class="cash-receipt-info">City, State, Postal Code</p>
+              <p class="cash-receipt-info">Phone Number</p>
+              <p class="cash-receipt-info">DATE & TIME</p>
+              <p class="cash-receipt-info cash-sub-total"></p>
+              <p class="cash-receipt-info cash-tax-total"></p>
+              <p class="cash-receipt-info cash-total"></p>
+              <p class="cash-receipt-info cash-tendered"></p>
+              <p class="cash-receipt-info change"></p>
             </div>
+            <div class="card-receipt-container card-off card-receipt-info">
+              <h1 class="card-receipt-info">
+                <img src="assets/video-nugget.png" alt="" />
+              </h1>
+              <p class="card-receipt-info">1428 Elm Street</p>
+              <p class="card-receipt-info">City, State, Postal Code</p>
+              <p class="card-receipt-info">Phone Number</p>
+              <p class="card-receipt-info">DATE & TIME</p>
+              <p class="card-receipt-info card-sub-total"></p>
+              <p class="card-receipt-info card-tax-total"></p>
+              <p class="card-receipt-info card-total"></p>
             </div>
-</div>
+          </div>
+        </div>
+      </div>
     </main>
     <script src="script.js"></script>
   </body>

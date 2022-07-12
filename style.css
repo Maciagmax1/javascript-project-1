@@ -234,8 +234,8 @@ button.checkout-button {
 .credit,
 .cash-btn,
 .card-btn,
-.card-receipt-info,
-.cash-receipt-info {
+.cash-off,
+.card-off {
   display: none;
 }
 
